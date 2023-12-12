@@ -18,6 +18,7 @@ public class LoginGCKE extends AppCompatActivity {
 
         editTextUserGCKE = findViewById(R.id.editTextUsernameGCKE);
         editTextPasswordGCKE = findViewById(R.id.editTextPasswordGCKE);
+
     }
 
     public void onClickButtonOkGCKE(View view) {
@@ -38,6 +39,16 @@ public class LoginGCKE extends AppCompatActivity {
     }
 
     public void onClickButtonIngresarGCKE(View view) {
+        String userGCKE = editTextUserGCKE.getText().toString();
+        String passwordGCKE= editTextPasswordGCKE.getText().toString();
 
+        if ((userGCKE.equals("kevin") && passwordGCKE.equals("1234")) || ((userGCKE.equals("esteban")) && (passwordGCKE.equals("1234")))) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("nombre",userGCKE);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "Debe ingresar los datos", Toast.LENGTH_SHORT).show();
+        }
     }
 }

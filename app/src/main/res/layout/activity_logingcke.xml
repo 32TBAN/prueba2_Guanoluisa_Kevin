@@ -28,7 +28,8 @@
             android:id="@+id/buttonLoginGCKE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:text="Login"
+            android:onClick="onClickButtonIngresarGCKE"/>
 
         <Button
             android:id="@+id/button"
@@ -37,5 +38,13 @@
             android:text="Agregar"
             android:onClick="onClickButtonOkGCKE"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="user: Kevin                            passwors: 1234"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="user: esteban                            passwors: 1234"/>
     </LinearLayout>
 </RelativeLayout>
