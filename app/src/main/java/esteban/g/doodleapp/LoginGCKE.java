@@ -19,6 +19,15 @@ public class LoginGCKE extends AppCompatActivity {
         editTextUserGCKE = findViewById(R.id.editTextUsernameGCKE);
         editTextPasswordGCKE = findViewById(R.id.editTextPasswordGCKE);
 
+
+//        sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+//
+//        String savedUser = sharedPreferences.getString("lastUser", "");
+//        String savedPassword = sharedPreferences.getString("lastPassword", "");
+
+        editTextUserGCKE.setText(savedUser);
+        editTextPasswordGCKE.setText(savedPassword);
+
     }
 
     public void onClickButtonOkGCKE(View view) {

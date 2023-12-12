@@ -19,6 +19,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView textViewNombreGCKE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -37,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
             else
                 setRequestedOrientation(
                         ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+            textViewNombreGCKE = findViewById(R.id.nombreGCKE);
+
+        Bundle bundle = getIntent().getExtras();
+
+        String nombre = bundle.getString("nombre");
+        textViewNombreGCKE.setText("                          Bienvenido "+nombre);
 
     }
 }
