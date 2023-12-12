@@ -13,20 +13,29 @@
             android:id="@+id/editTextUsernameGCKE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Usuario" />
+            android:hint="Usuario"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editTextPasswordGCKE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/buttonLoginGCKE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar"
+            android:onClick="onClickButtonOkGCKE"/>
 
     </LinearLayout>
 </RelativeLayout>
