@@ -3,6 +3,7 @@ package esteban.g.doodleapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 public class LoginGCKE extends AppCompatActivity {
 
     EditText editTextUserGCKE, editTextPasswordGCKE;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,11 +21,10 @@ public class LoginGCKE extends AppCompatActivity {
         editTextUserGCKE = findViewById(R.id.editTextUsernameGCKE);
         editTextPasswordGCKE = findViewById(R.id.editTextPasswordGCKE);
 
+        sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
 
-//        sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
-//
-//        String savedUser = sharedPreferences.getString("lastUser", "");
-//        String savedPassword = sharedPreferences.getString("lastPassword", "");
+        String savedUser = sharedPreferences.getString("lastUser", "");
+        String savedPassword = sharedPreferences.getString("lastPassword", "");
 
         editTextUserGCKE.setText(savedUser);
         editTextPasswordGCKE.setText(savedPassword);
@@ -52,6 +53,10 @@ public class LoginGCKE extends AppCompatActivity {
         String passwordGCKE= editTextPasswordGCKE.getText().toString();
 
         if ((userGCKE.equals("kevin") && passwordGCKE.equals("1234")) || ((userGCKE.equals("esteban")) && (passwordGCKE.equals("1234")))) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("lastUser", userGCKE);
+            editor.putString("lastPassword", passwordGCKE);
+            editor.apply();
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("nombre",userGCKE);
             startActivity(intent);
